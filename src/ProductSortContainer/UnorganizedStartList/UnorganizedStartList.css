@@ -1,0 +1,90 @@
+/* ul {
+  list-style-type: none;
+} */
+
+
+
+.start-list-container {
+  width: 450px;
+  margin-right: 200px;
+}
+
+.ul-start-list {
+  height: 500px;
+  background-color: rgb(40, 39, 39);
+  border-radius: 3px;
+  color: lightgray;
+  list-style-type: none;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  padding-top: 15px;
+  margin-top: 0;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+}
+
+.input-container button {
+  height: 25px;
+  width: 30%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  text-align: center;
+  font-style: italic;
+}
+
+form button {
+  margin: 0 auto;
+}
+
+.ul-list-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid gray;
+  padding-left: 5px;
+  margin-left: -15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.ul-list-container button{
+  border: 4px solid darkred;
+  border-radius: 50px;
+  margin-right: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.ul-list-container span {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ul-qty{
+  justify-content: center;
+}
+
+.ul-btn-clear{
+  background-color: lightblue;
+  margin-right: 25px;
+}
+
+.ul-btn-add {
+  background-color: green;
+  margin-left: 25px;
+}

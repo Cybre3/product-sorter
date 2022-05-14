@@ -1,0 +1,14 @@
+.final-list-container{
+  background-color: rgb(40, 39, 39);
+  border-radius: 3px;
+  height: 560px;
+  right: 0;
+  width: 450px;
+}
+
+.ol-start-list{
+  color: lightgray;
+  list-style-type: none;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+}

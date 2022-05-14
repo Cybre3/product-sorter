@@ -1,0 +1,10 @@
+.product-sort-container {
+  display: flex;
+  left: 50%;
+  position: fixed;
+  justify-content: space-between;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 10px inset gray; */
+  /* padding: 50px 90px; */
+}
