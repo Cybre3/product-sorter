@@ -39,9 +39,8 @@ const startList = [
 ];
 
 function ProductSortContainer(props) {
-  const ulTempList = startList 
-  const [list, setList] = useState(ulTempList);
-  const [clicked, setClicked] = useState(false);
+  const [list, setList] = useState(startList);
+  const [clickTrue, setClickTrue] = useState(false);
 
   function onSubmit(values) {
     values.productQty = Number(values.productQty);
@@ -60,14 +59,14 @@ function ProductSortContainer(props) {
 
   const sortList = () => {
     let productsMap = new Map();
-    let tempList = ulTempList;
+    const tempList = [...list];
     const sortedList = tempList.sort((a, b) => a.productName.localeCompare(b.productName));
     /*  console.log('sorted list', sortedList); */
 
     for (let item of sortedList) {
       /*  console.log('inside for loop', sortedList[key]) */
       const { productName } = item;
-      let firstLetter = productName[0];
+      let firstLetter = productName[0].toUpperCase();
 
       if (!productsMap.has(firstLetter)) {
         productsMap.set(firstLetter, []);
@@ -92,17 +91,17 @@ function ProductSortContainer(props) {
     } */
   };
 
-  function handleClick() {
-    setClicked(true);
+  function showSortList() {
+    return setClickTrue(true);
   }
 
   return (
     <div className="product-sort-container">
       <UnorganizedStartList list={list} onSubmit={onSubmit} handleDelete={handleDelete} />
-      <button className="sort-btn" onClick={handleClick}>
+      <button className="sort-btn" onClick={()=>{showSortList()}}>
         SORT
       </button>
-      <OrganizedList sortedList={sortList} handleDelete={handleDelete} clicked={clicked} />
+      <OrganizedList sortedList={sortList} handleDelete={handleDelete} clicked={clickTrue} />
     </div>
   );
 }
