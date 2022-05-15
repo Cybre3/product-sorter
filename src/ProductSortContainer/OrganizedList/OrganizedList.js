@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./OrganizedList.css";
 
 function OrganizedList(props) {
   const { sortedList, clicked } = props;
-  const sortedListArr = Array.from(sortedList());
-  console.log(sortedListArr);
+  const sortedListArr = Array.from(sortedList);
+  console.log(sortedList)
+  useEffect(() => {
+    console.log("re-rendered");
+  });
+
   return (
     <div className="final-list-container">
       <ul className="ol-start-list">
         {clicked
-          ? sortedListArr.map((key, index) => (
-              <div key={index}>
-                <span>{key[0]}</span>
-                {key[1].map((item, index) => (
+          ? sortedListArr.map((letterGroup, index) => (
+              <div key={index} id="ol">
+                <span>{letterGroup[0]}</span>
+                {letterGroup[1].map((item, index) => (
                   <div key={index}>
                     <span>
                       {item.productName}:{item.productQty}

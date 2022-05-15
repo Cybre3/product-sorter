@@ -13,9 +13,8 @@ function ListChild(props) {
         Edit
       </button> */}
       <button
-        id={props.btnId}
         onClick={() => {
-          props.handleDelete(props.id, props.liClass, props.btnId);
+          props.handleDelete(props.id);
         }}
       >
         Delete

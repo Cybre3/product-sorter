@@ -41,23 +41,14 @@ const startList = [
 function ProductSortContainer(props) {
   const [list, setList] = useState(startList);
   const [clickTrue, setClickTrue] = useState(false);
+  const [sortedList, setSortedList] = useState({});
 
   function onSubmit(values) {
     values.productQty = Number(values.productQty);
     setList((list) => [...list, values]);
   }
 
-  function handleDelete(id, liClass, btnId) {
-    const newList = list.filter((item, index) => {
-      if (btnId === "ul") {
-        return id !== index;
-      }
-      return item;
-    });
-    setList(newList);
-  }
-
-  const sortList = () => {
+  function handleSort() {
     let productsMap = new Map();
     const tempList = [...list];
     const sortedList = tempList.sort((a, b) => a.productName.localeCompare(b.productName));
@@ -75,33 +66,17 @@ function ProductSortContainer(props) {
       productsMap.get(firstLetter).push(item);
     }
 
-    return productsMap;
-    /*
-
-
-    let sortedAlphaProdArr = Array.from(productsMap);
-
-    for (let [letter, prodArr] of sortedAlphaProdArr) {
-      console.log(letter);
-
-      prodArr.forEach((itemInfo) => {
-        let [item, qty] = itemInfo.split(" : ");
-        console.log(`  ${item}: ${qty}`);
-      });
-    } */
+    setSortedList(productsMap);
+    setClickTrue(true)
   };
-
-  function showSortList() {
-    return setClickTrue(true);
-  }
 
   return (
     <div className="product-sort-container">
-      <UnorganizedStartList list={list} onSubmit={onSubmit} handleDelete={handleDelete} />
-      <button className="sort-btn" onClick={()=>{showSortList()}}>
+      <UnorganizedStartList list={list} onSubmit={onSubmit} setList={setList} />
+      <button className="sort-btn" onClick={handleSort}>
         SORT
       </button>
-      <OrganizedList sortedList={sortList} handleDelete={handleDelete} clicked={clickTrue} />
+      <OrganizedList sortedList={sortedList} clicked={clickTrue} />
     </div>
   );
 }

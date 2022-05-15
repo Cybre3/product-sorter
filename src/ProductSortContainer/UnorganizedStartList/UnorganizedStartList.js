@@ -8,7 +8,7 @@ import FormikControl from "../../Utilities/Formik/FormikControl";
 import "./UnorganizedStartList.css";
 
 function UnorganizedStartList(props) {
-  const { list, onSubmit, handleDelete } = props;
+  const { list, onSubmit, setList} = props;
 
   const initialValues = {
     productName: "",
@@ -20,19 +20,13 @@ function UnorganizedStartList(props) {
     productQty: Yup.number().required("Required").positive(),
   });
 
-  function handleEdit(id) {}
-  /* 
-  const exportList = createContext();
+  /* function handleEdit(id) {} */
 
-  const capturedList = () => {
-    return (
-      <>
-        <exportList.Provider value={list}>
-          <OrganizedList />
-        </exportList.Provider>
-      </>
-    );
-  }; */
+  function handleDelete(id) {
+    const newList = list.filter((item, index) => id !== index);
+    setList(newList)
+  }
+  
 
   return (
     <div className="start-list-container">
@@ -48,7 +42,6 @@ function UnorganizedStartList(props) {
             productName={product.productName}
             productQty={product.productQty}
             handleDelete={handleDelete}
-            handleEdit={handleEdit}
           />
         ))}
       </ul>
