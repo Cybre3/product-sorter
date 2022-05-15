@@ -8,3 +8,8 @@
   /* border: 10px inset gray; */
   /* padding: 50px 90px; */
 }
+
+.sort-btn {
+  height: 50px;
+  margin: auto 50px;
+}

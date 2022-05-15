@@ -2,7 +2,7 @@ import React from "react";
 
 function ListChild(props) {
   return (
-    <li className={props.liClass} key={props.index}>
+    <li className={props.liClass}>
       <span className={props.prodClass}>{props.productName}</span>
       <span className={props.qtyClass}>{props.productQty}</span>
       {/*  <button
@@ -13,8 +13,9 @@ function ListChild(props) {
         Edit
       </button> */}
       <button
+        id={props.btnId}
         onClick={() => {
-          props.handleDelete(props.id);
+          props.handleDelete(props.id, props.liClass, props.btnId);
         }}
       >
         Delete
