@@ -2,8 +2,6 @@
   list-style-type: none;
 } */
 
-
-
 .start-list-container {
   width: 450px;
 }
@@ -68,6 +66,8 @@ form button {
   cursor: pointer;
   margin-left: auto;
   margin-right: 0;
+  margin-bottom: 5px;
+  height: 30px;
 }
 
 .ul-list-container span {
@@ -94,7 +94,7 @@ form button {
   .start-list-container {
     width: 850px;
   }
-  
+
   .ul-start-list {
     flex-wrap: wrap;
     font-size: 18px;
@@ -106,7 +106,7 @@ form button {
     padding-right: 10px;
     width: 45%;
   }
-  
+
   .input-container {
     margin: auto;
   }
@@ -125,8 +125,23 @@ form button {
   .ul-btn-clear {
     margin-right: 80px;
   }
-  
+
   .ul-btn-add {
     margin-left: 80px;
+  }
+
+  @media only screen and (max-width: 970px) {
+    .start-list-container {
+      width: 700px;
+    }
+
+    .ul-start-list {
+      height: 250px;
+      font-size: 16px;
+    }
+
+    .ul-list-container {
+      width: 45%;
+    }
   }
 }
