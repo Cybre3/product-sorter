@@ -1,6 +1,6 @@
 import React from "react";
 import "./OrganizedList.css";
-import html2pdf from 'html2pdf.js'
+import html2pdf from "html2pdf.js";
 
 function OrganizedList(props) {
   const { sortedList, clicked } = props;
@@ -20,32 +20,42 @@ function OrganizedList(props) {
 
   return (
     <div className="final-list-container">
-      <div className="ol-btn-container">
-        <button
-          className="ol-print-list-btn"
-          onClick={() => {
-            printList();
-          }}
-        >
-          Print
-        </button>
-        <button id="downloadPDF" onClick={download}>Download</button>
-      </div>
-      <ul className="ol-start-list" id="ol-print-download">
-        {clicked
-          ? sortedListArr.map((letterGroup, index) => (
-              <div key={index} id="ol" className="ol-group">
-                <span>{letterGroup[0]}</span>
-                {letterGroup[1].map((item, index) => (
-                  <div className="ol-item" key={index}>
-                    <span className="ol-prod-name">{item.productName}</span>
-                    <span className="ol-item-colon">:</span>
-                    <span className="ol-prod-qty">{item.productQty}</span>
-                  </div>
-                ))}
-              </div>
-            ))
-          : null}
+      {clicked ? (
+        <div className="ol-btn-container">
+          <button
+            className="ol-print-list-btn"
+            onClick={() => {
+              printList();
+            }}
+          >
+            Print
+          </button>
+          <button id="downloadPDF" onClick={download}>
+            Download
+          </button>
+        </div>
+      ) : null}
+      <ul
+        className="ol-start-list"
+        style={{ textAlign: !clicked ? "center" : "left" }}
+        id="ol-print-download"
+      >
+        {clicked ? (
+          sortedListArr.map((letterGroup, index) => (
+            <div key={index} id="ol" className="ol-group">
+              <span>{letterGroup[0]}</span>
+              {letterGroup[1].map((item, index) => (
+                <div className="ol-item" key={index}>
+                  <span className="ol-prod-name">{item.productName}</span>
+                  <span className="ol-item-colon">:</span>
+                  <span className="ol-prod-qty">{item.productQty}</span>
+                </div>
+              ))}
+            </div>
+          ))
+        ) : (
+          <span>Click sort button to sort list 🙂</span>
+        )}
       </ul>
       <div id="editor"></div>
     </div>

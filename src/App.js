@@ -1,5 +1,5 @@
-import "./App.css";
 import ProductSortContainer from "./ProductSortContainer/ProductSortContainer";
+import "./App.css";
 
 function App() {
   return (
