@@ -2,7 +2,7 @@ import React from "react";
 
 function ListChild(props) {
   return (
-    <li className={props.liClass}>
+    <li className={props.liClassName}>
       <span className={props.prodClass}>{props.productName}</span>
       <span className={props.qtyClass}>{props.productQty}</span>
       {/*  <button
