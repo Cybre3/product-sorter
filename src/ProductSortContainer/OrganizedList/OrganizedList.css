@@ -1,8 +1,9 @@
-.final-list-container{
+.final-list-container {
   background-color: rgb(40, 39, 39);
   border-radius: 3px;
   height: 560px;
-  right: 0;
+  float: right;
+  /* right: 0; */
   width: 450px;
   overflow-y: auto;
 }
@@ -35,7 +36,7 @@
   margin-right: 5px;
 }
 
-@media only screen and (max-width: 1110px) {
+/* @media only screen and (max-width: 1110px) {
   .final-list-container {
     height: 700px;
     margin: -270px 0 0 auto;
@@ -51,6 +52,7 @@
     letter-spacing: 0.1em;
     padding: 5px 10px;
   }
+}
 
   @media only screen and (max-width: 970px) {
     .final-list-container {
@@ -58,5 +60,4 @@
       margin: -180px 0 0 auto;
       width: 550px;
     }
-  }
-}
+  } */
