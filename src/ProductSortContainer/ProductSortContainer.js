@@ -1,42 +1,10 @@
 import React, { useState } from "react";
+
 import OrganizedList from "./OrganizedList/OrganizedList";
 import UnorganizedStartList from "./UnorganizedStartList/UnorganizedStartList";
-import "./ProductSortContainer.css";
+import startList from "./startList.json";
 
-const startList = [
-  {
-    productName: "Appricot",
-    productQty: 20.4,
-  },
-  {
-    productName: "Fridge",
-    productQty: 1500,
-  },
-  {
-    productName: "TV",
-    productQty: 1499,
-  },
-  {
-    productName: "Deodorant",
-    productQty: 10,
-  },
-  {
-    productName: "Boiler",
-    productQty: 300,
-  },
-  {
-    productName: "Apple",
-    productQty: 1.25,
-  },
-  {
-    productName: "Anti-bug spray",
-    productQty: 15,
-  },
-  {
-    productName: "T-Shirt",
-    productQty: 10,
-  },
-];
+import "./ProductSortContainer.css";
 
 function ProductSortContainer(props) {
   const [list, setList] = useState(startList);
@@ -55,7 +23,6 @@ function ProductSortContainer(props) {
     /*  console.log('sorted list', sortedList); */
 
     for (let item of sortedList) {
-      /*  console.log('inside for loop', sortedList[key]) */
       const { productName } = item;
       let firstLetter = productName[0].toUpperCase();
 
@@ -67,8 +34,8 @@ function ProductSortContainer(props) {
     }
 
     setSortedList(productsMap);
-    setClickTrue(true)
-  };
+    setClickTrue(true);
+  }
 
   return (
     <div className="product-sort-container">

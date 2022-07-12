@@ -1,18 +1,20 @@
 .product-sort-container {
-  display: flex;
-  justify-content: space-between;
+  margin: 50px auto 0;
+  /*
+  justify-content: space-between; */
   /* border: 10px inset gray; */
-  padding: 0 200px;
-  margin: 75px auto;
+  /* padding: 0 200px;
+  margin: 75px auto; */
 }
  
 .sort-btn {
   border-radius: 4px;
   letter-spacing: 0.05em;
-  margin: auto 50px;
-  padding: 20px 15px;
+  margin: 150px 50px 0;
+  padding: 20px 15px; 
 }
 
+/* 
 @media only screen and (max-width: 1110px) {
   .product-sort-container {
     align-items: center;
@@ -31,6 +33,7 @@
     padding: 100px 50px;
     margin: 80px 50px 0 0;
   }
+}
 
   @media only screen and (max-width: 970px) {
     .product-sort-container {
@@ -41,5 +44,4 @@
       padding: 60px 30px;
       margin: 60px 20px 0 0;
     }
-  }
-}
+  } */
