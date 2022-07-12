@@ -54,7 +54,10 @@ function OrganizedList(props) {
             </div>
           ))
         ) : (
-          <span>Click sort button to sort list 🙂</span>
+          // eslint-disable-next-line
+          <span>
+            Click sort button to sort list 🙂
+          </span>
         )}
       </ul>
       <div id="editor"></div>

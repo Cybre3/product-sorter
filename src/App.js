@@ -1,3 +1,4 @@
+import React from 'react';
 import ProductSortContainer from "./ProductSortContainer/ProductSortContainer";
 import "./App.css";
 
