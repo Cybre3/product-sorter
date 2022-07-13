@@ -22,6 +22,10 @@ function OrganizedList(props) {
     <div className="final-list-container">
       {clicked ? (
         <div className="ol-btn-container">
+          <div className="ol-legend-key">
+            <span className="ol-legend-title">Legend / Key</span>
+            <li className="ol-legend-descript">Item name : Item Quantity</li>
+          </div>
           <button
             className="ol-print-list-btn"
             onClick={() => {
@@ -55,9 +59,7 @@ function OrganizedList(props) {
           ))
         ) : (
           // eslint-disable-next-line
-          <span>
-            Click sort button to sort list 🙂
-          </span>
+          <span>Click sort button to sort list 🙂</span>
         )}
       </ul>
       <div id="editor"></div>

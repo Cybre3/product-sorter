@@ -1,17 +1,14 @@
 .product-sort-container {
   margin: 50px auto 0;
-  /*
-  justify-content: space-between; */
-  /* border: 10px inset gray; */
-  /* padding: 0 200px;
-  margin: 75px auto; */
 }
  
 .sort-btn {
   border-radius: 4px;
+  cursor: pointer;
   letter-spacing: 0.05em;
-  margin: 150px 50px 0;
+  margin: 200px 50px 0;
   padding: 20px 15px; 
+  
 }
 
 /* 

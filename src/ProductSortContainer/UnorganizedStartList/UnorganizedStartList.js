@@ -31,6 +31,7 @@ function UnorganizedStartList(props) {
     setList([]);
   }
 
+
   return (
     <div className="start-list-container">
       <ul className="ul-start-list">
@@ -55,23 +56,27 @@ function UnorganizedStartList(props) {
 
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
         <Form className="input-container">
-          <FormikControl control="input" name="productName" placeholder="Add new item here" />
-          <FormikControl control="input" name="productQty" placeholder="Add amount here" />
-          <button
-            onClick={() => {
-              clearList();
-            }}
-            className="ul-btn-clearAll"
-          >
-            CLEAR ALL
-          </button>
-          <div className="form-btns">
-            <button type="reset" className="ul-btn-clear">
-              CLEAR
+          <div className="left-form-input">
+            <FormikControl control="input" name="productName" placeholder="Add new item here" />
+            <button
+              onClick={() => {
+                clearList();
+              }}
+              className="ul-btn-clearAll"
+            >
+              CLEAR ALL
             </button>
-            <button type="submit" className="ul-btn-add">
-              ADD
-            </button>
+          </div>
+          <div className="right-form-input">
+            <FormikControl control="input" name="productQty" placeholder="Add amount here" />
+            <div className="form-btns">
+              <button type="reset" className="ul-btn-clear">
+                CLEAR
+              </button>
+              <button type="submit" className="ul-btn-add">
+                ADD
+              </button>
+            </div>
           </div>
         </Form>
       </Formik>

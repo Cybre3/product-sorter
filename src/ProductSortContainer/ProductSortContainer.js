@@ -11,9 +11,11 @@ function ProductSortContainer(props) {
   const [clickTrue, setClickTrue] = useState(false);
   const [sortedList, setSortedList] = useState({});
 
+
   function onSubmit(values) {
     values.productQty = Number(values.productQty);
     setList((list) => [...list, values]);
+    document.querySelector("Form").reset();
   }
 
   function handleSort() {
