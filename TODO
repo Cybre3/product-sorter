@@ -1,4 +1,4 @@
-Create go back to main page button
 turn other project anchor tag into button
 create div with links to other projects
 disable main page while modal visible
+create a null instance of modal instead of z-index

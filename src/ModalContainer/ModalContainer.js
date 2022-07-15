@@ -27,40 +27,25 @@ function ModalContainer(props) {
       <hr />
       <h4 className="modal-subtitle">Visit other Small Coding Projects</h4>
       <p className="modal-descript">
-        This{" "}
-        <a
-          href="#/"
-          role="button"
-          className="modal-popover-btn"
-          data-bs-toggle="popover"
-          title="Popover title"
-          data-bs-content="Popover body content is set in this attribute."
-        >
-          button
-        </a>{" "}
-        allows you to view other projects.
+        This <button className="modal-popover-btn">button</button> allows you to view other
+        projects.
       </p>
       <hr />
       <h4 className="modal-subtitle">Start list choices</h4>
       <p className="modal-descript">
         Would you like to start with an{" "}
-        <button
-          className="ul-list-choice"
-          onClick={(e) => handleEmptyListRequest(e)}
-        >
+        <button className="ul-list-choice" onClick={(e) => handleEmptyListRequest(e)}>
           Empty
         </button>{" "}
         or{" "}
-        <button
-          className="ul-list-choice"
-          onClick={(e) => handleEmptyListRequest(e)}
-        >
+        <button className="ul-list-choice" onClick={(e) => handleEmptyListRequest(e)}>
           Example
         </button>{" "}
         list?
       </p>
       <hr />
       <div className="modal-button-container">
+        <a href="http://starrika-mccloud-portfolio.herokuapp.com/">Back to portfolio</a>
         <button
           onClick={() => {
             setHide("fadeout .4s ease-out forwards");

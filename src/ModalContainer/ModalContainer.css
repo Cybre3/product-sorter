@@ -24,10 +24,13 @@
 
 .modal-popover-btn {
   background-color: gray;
+  border: none;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
+  font-size: 14px;
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 8px 12px;
 }
 
 .modal-popover-btn:hover {
@@ -55,28 +58,35 @@ h4 {
   text-align: right;
 }
 
-.modal-button-container button {
+.modal-button-container button, a {
+  background-color: darkgray;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
+}
+
+.modal-button-container a {
+  color: black;
+  margin-right: 10px;
+  padding: 3px 8px 5px;
+  text-decoration: none;
+}
+
+.modal-button-container button {
+  margin-right: 10px;
   padding: 6px 10px;
 }
 
-.modal-button-container button:nth-of-type(odd) {
-  background-color: darkgray;
-  margin-right: 10px;
+.modal-button-container button:hover {
+  background-color: seagreen;
+  color: white;
 }
 
-.modal-button-container button:nth-of-type(odd):hover {
+.modal-button-container a:hover {
   background-color: lightslategray;
   color: white;
 }
-
-/* .modal-button-container button:nth-of-type(even):hover {
-  background-color: seagreen;
-  color: white;
-} */
 
 @keyframes fadeout {
   from {
@@ -87,7 +97,7 @@ h4 {
   to {
     opacity: 0;
     top: 35%;
-    z-index: -100;
+    z-index: -50;
   }
 }
 
