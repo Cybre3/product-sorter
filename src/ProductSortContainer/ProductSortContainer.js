@@ -5,12 +5,20 @@ import UnorganizedStartList from "./UnorganizedStartList/UnorganizedStartList";
 import startList from "./startList.json";
 
 import "./ProductSortContainer.css";
+import { useEffect } from "react";
 
 function ProductSortContainer(props) {
   const [list, setList] = useState(startList);
   const [clickTrue, setClickTrue] = useState(false);
   const [sortedList, setSortedList] = useState({});
 
+  useEffect(() => {
+    if (props.modalClick === "empty") {
+      setList([]);
+    } else if (props.modalClick === "example" || "") {
+      setList(startList);
+    }
+  }, [props.modalClick]);
 
   function onSubmit(values) {
     values.productQty = Number(values.productQty);

@@ -1,0 +1,104 @@
+.modal-body {
+  background-color: white;
+  border: 4px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  position: fixed;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+}
+
+.modal-title,
+.modal-subtitle,
+.modal-descript {
+  margin-left: 15px;
+}
+
+.ul-list-choice {
+  color: blue;
+  cursor: pointer;
+}
+
+.modal-popover-btn {
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+}
+
+.modal-popover-btn:hover {
+  background-color: dodgerblue;
+}
+
+.modal-body hr {
+  margin-bottom: 0;
+  overflow: hidden;
+  width: 99%;
+}
+
+.modal-body hr:nth-of-type(even) {
+  width: 95%;
+}
+
+.modal-body h2,
+h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.modal-button-container {
+  padding: 10px;
+  text-align: right;
+}
+
+.modal-button-container button {
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px 10px;
+}
+
+.modal-button-container button:nth-of-type(odd) {
+  background-color: darkgray;
+  margin-right: 10px;
+}
+
+.modal-button-container button:nth-of-type(odd):hover {
+  background-color: lightslategray;
+  color: white;
+}
+
+/* .modal-button-container button:nth-of-type(even):hover {
+  background-color: seagreen;
+  color: white;
+} */
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    top: 40%;
+  }
+  
+  to {
+    opacity: 0;
+    top: 35%;
+    z-index: -100;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    top: 35%;
+  }
+
+  to {
+    opacity: 1;
+    top: 40%;
+  }
+}
