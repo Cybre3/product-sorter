@@ -1,11 +1,13 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import CodingChallengesContainer from "./CodingChallengesContainer/CodingChallengesContainer";
 
 import "./ModalContainer.css";
 
 function ModalContainer(props) {
   const [hide, setHide] = useState("fadein .4s linear");
+  const [showProjectOptions, setShowProjectOptions] = useState(false);
   const [modalStartListOption, setModalStartListOption] = useState("");
   const { childToParent } = props;
 
@@ -21,13 +23,21 @@ function ModalContainer(props) {
     childToParent(modalStartListOption);
   }, [childToParent, modalStartListOption]);
 
+  function optionsToggle() {
+    showProjectOptions === true ? setShowProjectOptions(false) : setShowProjectOptions(true);
+  }
+
   return (
     <div style={{ animation: hide }} className="modal-body">
       <h2 className="modal-title">Welcome to Product-Sorter!</h2>
       <hr />
       <h4 className="modal-subtitle">Visit other Small Coding Projects</h4>
       <p className="modal-descript">
-        This <button className="modal-popover-btn">button</button> allows you to view other
+        This{" "}
+        <button onClick={() => optionsToggle()} className="modal-popover-btn">
+          button
+        </button>
+        {showProjectOptions ? <CodingChallengesContainer /> : null} allows you to view other
         projects.
       </p>
       <hr />
