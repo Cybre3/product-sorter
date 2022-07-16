@@ -1,2 +1,2 @@
-disable main page while modal visible
 create a null instance of modal instead of z-index
+fix animation going out on modal, may not be able to use null
