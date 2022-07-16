@@ -11,6 +11,10 @@
   width: 450px;
 }
 
+.modal-body button, .modal-body a {
+  letter-spacing: 0.05em;
+}
+
 .modal-title,
 .modal-subtitle,
 .modal-descript {
@@ -102,7 +106,6 @@ h4 {
   to {
     opacity: 0;
     top: 35%;
-    z-index: -50;
   }
 }
 

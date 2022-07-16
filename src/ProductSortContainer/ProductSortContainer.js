@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import OrganizedList from "./OrganizedList/OrganizedList";
 import UnorganizedStartList from "./UnorganizedStartList/UnorganizedStartList";
-import startList from "./startList.json";
+import startList from "../Utilities/Manifests/startList.json";
 
 import "./ProductSortContainer.css";
 import { useEffect } from "react";
@@ -46,6 +46,7 @@ function ProductSortContainer(props) {
     setSortedList(productsMap);
     setClickTrue(true);
   }
+
 
   return (
     <div className="product-sort-container">

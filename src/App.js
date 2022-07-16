@@ -5,15 +5,20 @@ import ModalContainer from "./ModalContainer/ModalContainer";
 
 function App() {
   const [modalClick, setModalClick] = useState("");
+  const [modalVisible, setModalVisible] = useState(true);
 
   const childToParent = (data) => {
-    setModalClick(data);
+    setModalClick(data.modalStartListOption);
+    if (data.hide.includes("fadeout")) {
+      setModalVisible(false);
+    }
   };
 
   return (
     <div className="App">
-      <ModalContainer childToParent={childToParent}/>
-      <ProductSortContainer modalClick={modalClick}/>
+      {modalVisible ? <ModalContainer childToParent={childToParent} /> : null}
+
+      <ProductSortContainer modalClick={modalClick} />
     </div>
   );
 }

@@ -7,16 +7,14 @@ import "./CodingChallengesContainer.css";
 function CodingChallengesContainer(props) {
   return (
     <div className="challenge-container">
-      <ul >
+      <div className="arrow"></div>
+      <ul>
         {SCCLinkManifest.map((option) => (
           <li className="link">
-            <a href={option.linkName}>
-              {option.projName}
-            </a>
+            <a href={option.linkName}>{option.projName}</a>
           </li>
         ))}
       </ul>
-      <div className="popover-arrow"></div>
     </div>
   );
 }
