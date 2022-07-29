@@ -7,6 +7,7 @@ import "./CodingChallengesContainer.css";
 function CodingChallengesContainer(props) {
   return (
     <div className="challenge-container">
+    {/* <h4>Explore other small coding challenges</h4> */}
       <div className="arrow"></div>
       <ul>
         {SCCLinkManifest.map((option) => (

@@ -9,7 +9,7 @@ function App() {
 
   const childToParent = (data) => {
     setModalClick(data.modalStartListOption);
-    if (data.hide.includes("fadeout")) {
+    if (data.disabled === true) {
       setModalVisible(false);
     }
   };

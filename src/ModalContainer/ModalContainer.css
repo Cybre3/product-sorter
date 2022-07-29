@@ -1,4 +1,5 @@
 .modal-body {
+  animation: fadein .4s linear;
   background-color: white;
   border: 4px solid lightgray;
   border-radius: 5px;

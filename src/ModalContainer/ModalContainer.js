@@ -6,10 +6,10 @@ import CodingChallengesContainer from "./CodingChallengesContainer/CodingChallen
 import "./ModalContainer.css";
 
 function ModalContainer(props) {
-  const [hide, setHide] = useState("fadein .4s linear");
+  const [disabled, setDisabled] = useState(false);
   const [showProjectOptions, setShowProjectOptions] = useState(false);
   const [modalStartListOption, setModalStartListOption] = useState("");
-  const [data, setData] = useState({ hide, modalStartListOption });
+  const [data, setData] = useState({ disabled, modalStartListOption });
 
   const { childToParent } = props;
 
@@ -21,9 +21,17 @@ function ModalContainer(props) {
     }
   }
 
+  function hideModal() {
+    $(".modal-body").css({ animation: "fadeout .4s ease-out forwards" });
+    setTimeout(() => {
+      $(".modal-body").css("display", "none");
+      setDisabled(true);
+    }, 500);
+  }
+
   useEffect(() => {
-    setData({ hide, modalStartListOption });
-  }, [hide, modalStartListOption]);
+    setData({ disabled, modalStartListOption });
+  }, [disabled, modalStartListOption]);
 
   useEffect(() => {
     childToParent(data);
@@ -33,7 +41,7 @@ function ModalContainer(props) {
     showProjectOptions === true ? setShowProjectOptions(false) : setShowProjectOptions(true);
   }
 
-  if (hide.includes("fadein")) {
+  if (disabled === false) {
     $("input").attr("disabled", "disabled");
     $(".start-list-container button").attr("disabled", "disabled");
   } else {
@@ -42,7 +50,7 @@ function ModalContainer(props) {
   }
 
   return (
-    <div style={{ animation: hide }} className="modal-body">
+    <div className="modal-body">
       <h2 className="modal-title">Welcome to Product-Sorter!</h2>
       <hr />
       <h4 className="modal-subtitle">Visit other Small Coding Projects</h4>
@@ -70,13 +78,7 @@ function ModalContainer(props) {
       <hr />
       <div className="modal-button-container">
         <a href="http://starrika-mccloud-portfolio.herokuapp.com/">Back to portfolio</a>
-        <button
-          onClick={() => {
-            setHide("fadeout .4s ease-out forwards");
-          }}
-        >
-          Continue
-        </button>
+        <button onClick={() => hideModal()}>Continue</button>
       </div>
     </div>
   );
